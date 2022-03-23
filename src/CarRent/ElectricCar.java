@@ -1,6 +1,6 @@
 package CarRent;
 
-public abstract class ElectricCar extends ACar {
+public class ElectricCar extends ACar {
     int batteryCapacity;
     int maxRange;
 
@@ -22,7 +22,7 @@ public abstract class ElectricCar extends ACar {
 
     public int getWhPrKm() // returns the power consumption in watt hours per driven kilometre.
     {
-        return batteryCapacity / maxRange;
+        return (batteryCapacity / maxRange) * 1000;
     }
 
     @Override
@@ -50,6 +50,8 @@ public abstract class ElectricCar extends ACar {
         int registrationFee;
         int kmPrWh = 100 / (getWhPrKm() / 91);
 
+        System.out.println("kmPrWh: " + kmPrWh);
+
         if (kmPrWh >= 21) {
             registrationFee = 330;
         } else if (kmPrWh >= 15 && kmPrWh <= 20) {
@@ -63,6 +65,18 @@ public abstract class ElectricCar extends ACar {
         }
 
         return registrationFee;
+    }
+
+    @Override
+    public String toString() {
+        return "ElectricCar{" +
+                "registrationNr='" + registrationNr + '\'' +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", amountOfDoors=" + amountOfDoors +
+                ", batteryCapacity=" + batteryCapacity +
+                ", maxRange=" + maxRange +
+                '}';
     }
 }
 

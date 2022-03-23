@@ -40,4 +40,16 @@ public class DieselCar extends AFuelCar {
 
         return registrationFee;
     }
+
+    @Override
+    public String toString() {
+        return "DieselCar{" +
+                "registrationNr='" + registrationNr + '\'' +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", amountOfDoors=" + amountOfDoors +
+                ", kmPrLitre=" + kmPrLitre +
+                ", particleFilter=" + particleFilter +
+                '}';
+    }
 }

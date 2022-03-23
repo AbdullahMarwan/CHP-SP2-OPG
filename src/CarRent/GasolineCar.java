@@ -30,4 +30,14 @@ public class GasolineCar extends AFuelCar {
         return registrationFee;
     }
 
+    @Override
+    public String toString() {
+        return "GasolineCar{" +
+                "registrationNr='" + registrationNr + '\'' +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", amountOfDoors=" + amountOfDoors +
+                ", kmPrLitre=" + kmPrLitre +
+                '}';
+    }
 }
